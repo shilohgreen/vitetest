@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'lib/main.js'),
+      entry: path.resolve(__dirname, 'src/main.js'),
       name: 'MyLib',
       fileName: (format) => `my-lib.${format}.js`, // Fixed syntax error here
     },
