@@ -1,0 +1,97 @@
+.game-container {
+    background: url('./gameimg/animation4.png');
+    /* Set the background color to black */
+    width: 100%;
+    /* Set the width of the container */
+    height: 390px;
+    /* Set the height of the container */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    padding: 0;
+    /* Remove padding inside the container */
+    background-size: cover;
+    /* Ensure the background image covers the entire container */
+    background-position: center;
+    /* Center the background image within the container */
+    /* border-radius: 10px; */
+    /* Optional: Add border-radius for rounded corners */
+    color: white;
+    /* Set text color to white */
+    position: relative;
+    /* Ensure .game-object is positioned relative to this container */
+}
+
+
+.animation-container {
+    position: relative;
+}
+
+.claw {
+    position: absolute;
+    width: 60px;
+    /* Set the width of the claw image */
+    height: 60px;
+    /* Set the height of the claw image */
+    background-image: url('./gameimg/claw2.png');
+    /* Set the URL of your claw image */
+    background-size: cover;
+    /* Ensure the image covers the entire element */
+    animation-duration: 2s;
+    /* Adjust the duration of the animation */
+    animation-timing-function: ease-in-out;
+    /* Use ease-in-out timing function */
+    z-index: 2;
+}
+
+.grid-cell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ff000000;
+    z-index: 5;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.green-box {
+    /* background-color: green; */
+}
+
+@keyframes moveDown {
+    from {
+        top: 30;
+    }
+
+    to {
+        top: 270px;
+        /* Adjust this value according to your grid size */
+    }
+}
+
+@keyframes moveUp {
+    from {
+        top: 270px;
+        /* Adjust this value according to your grid size */
+    }
+
+    to {
+        top: 30;
+    }
+}
+
+.claw {
+    position: absolute;
+    animation-duration: 2s;
+    /* Adjust the duration of the animation */
+    animation-timing-function: ease-in-out;
+    /* Use ease-in-out timing function */
+}
+
+.move-down-animation {
+    animation-name: moveDown;
+}
+
+.move-up-animation {
+    animation-name: moveUp;
+}

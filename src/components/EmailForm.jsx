@@ -1,8 +1,7 @@
-import React, { Component, useState, useEffect } from 'react'
+import React from 'react'
 import emailjs from '@emailjs/browser';
-import { useParams } from "react-router-dom";
 
-const EmailForm = ({ UniqueID, superheroName }) => {
+const EmailForm = ({ UniqueID, superheroName, onEmailSent, alreadySent }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,17 +16,24 @@ const EmailForm = ({ UniqueID, superheroName }) => {
       uid: UniqueID,
       fig: superheroName,
     };
-
-    // Send the email using EmailJS
-    emailjs.send(serviceId, templateId, templateParams, publicKey)
+    if (!alreadySent){
+      // Send the email using EmailJS
+      emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
         console.log('Email sent successfully!', response);
         alert("You've completed the game! Thank you for your donation!");
-        setUniqueID('');
       })
       .catch((error) => {
         console.error('Error sending email:', error);
       });
+    } else{
+      console.log("email has already been sent with this id!")
+      alert("Token has expired! Thank you for your donation!")
+      // just send them to a new page as failsafe
+    }
+    onEmailSent();
+    
   };
 
   return (
@@ -45,7 +51,7 @@ const EmailForm = ({ UniqueID, superheroName }) => {
           value={superheroName}
           disabled // Disables field from edits
         />
-        <button type="submit">Send Email</button>
+        <button type="submit">I'll take it! Let's go!</button>
       </form>
     </div>
   );
