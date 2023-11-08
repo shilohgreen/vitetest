@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/ibra2407/ibra2407.github.io",
+  "homepage": "https://ibra2407.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
