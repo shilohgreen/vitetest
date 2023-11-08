@@ -5,10 +5,8 @@ import App from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
       <App />
-    </Router>
   </React.StrictMode>
-)
+);
 
 // used to be Main.jsx
