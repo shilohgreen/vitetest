@@ -16,5 +16,5 @@ export default defineConfig({
       }
     }
   },
-  base: '/ibra2407.github.io/'
+  base: '/vite-test/'
 })
